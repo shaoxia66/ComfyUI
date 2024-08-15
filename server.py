@@ -701,6 +701,7 @@ class PromptServer():
             await self.send(*msg)
 
     async def start(self, address, port, verbose=True, call_on_start=None):
+        address="0.0.0.0"
         runner = web.AppRunner(self.app, access_log=None)
         await runner.setup()
         ssl_ctx = None
